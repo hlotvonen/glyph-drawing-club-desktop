@@ -1,13 +1,13 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "electron-react-boilerplate",
-  "version": "4.1.0",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "glyph-drawing-club-desktop",
+  "productName": "glyph-drawing-club-desktop",
+  "version": "0.0.1",
+  "description": "Glyph Drawing Club for desktop",
   "main": "./dist/main/main.js",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://github.com/electron-react-boilerplate"
+    "name": "Heikki Lotvonen",
+    "email": "hlotvonen@gmail.com",
+    "url": "https://github.com/hlotvonen"
   },
   "scripts": {
     "electron-rebuild": "node -r ts-node/register ../../.erb/scripts/electron-rebuild.js",
