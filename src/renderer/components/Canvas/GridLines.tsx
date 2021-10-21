@@ -1,26 +1,28 @@
-import React from 'react';
-import { observer } from 'mobx-react';
-import paperstore from '../../stores/PaperStore';
+import React from "react";
+import { observer } from "mobx-react";
+import store from "renderer/stores/RootStore";
 
-const GridLines = () => {
+const GridLines = (props) => {
 	return (
 		<svg
-			className={'UiGrid'}
-			width={paperstore.canvasSizeInPixels.width + 'px'}
-			height={paperstore.canvasSizeInPixels.height + 'px'}
+			className={"UiGrid"}
+			width={store.openProjects[props.id].canvasSizeInPixels.width + "px"}
+			height={store.openProjects[props.id].canvasSizeInPixels.height + "px"}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<defs>
 				<pattern
-					id="smallGrid"
-					width={paperstore.cellSize.width}
-					height={paperstore.cellSize.height}
+					id={"gridlines_" + props.id}
+					width={store.openProjects[props.id].cellSize.width}
+					height={store.openProjects[props.id].cellSize.height}
 					patternUnits="userSpaceOnUse"
 				>
 					<path
-						d={`M ${paperstore.cellSize.width} 0 L 0 0 0 ${paperstore.cellSize.height}`}
+						d={`M ${store.openProjects[props.id].cellSize.width} 0 L 0 0 0 ${
+							store.openProjects[props.id].cellSize.height
+						}`}
 						fill="none"
-						stroke="grey"
+						stroke="blue"
 						strokeWidth="0.5"
 					/>
 				</pattern>
@@ -28,8 +30,8 @@ const GridLines = () => {
 			<rect
 				width="100%"
 				height="100%"
-				fill="url(#smallGrid)"
-				stroke="black"
+				fill={`url(#gridlines_${props.id})`}
+				stroke="blue"
 				strokeWidth="0.5"
 			/>
 		</svg>
